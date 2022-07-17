@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Easy', 'value': 'easy'},
+    {'label': 'Medium', 'value': 'medium'},
+    {'label': 'Hard', 'value': 'hard'},
+    ]" access="Public"/>   
+    <lightning:card title="Hello">
+    <lightning:layout horizontalAlign="center">
+        <lightning:layoutItem padding="around-small">
+            <lightning:combobox name="progress" label="Status" variant="label-hidden" value="inProgress" placeholder="Select Difficulty" options="{! v.options }" onchange="{! c.handleChange }"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small">
+            <lightning:button variant="brand" label="Brand" title="Brand action"  />
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small">
+            <lightning:button label="Neutral" title="Neutral action" />
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</lightning:card>	
+</aura:component>
