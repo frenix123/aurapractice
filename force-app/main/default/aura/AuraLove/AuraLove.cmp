@@ -10,7 +10,7 @@
             <lightning:combobox name="progress" label="Status" variant="label-hidden" value="inProgress" placeholder="Select Difficulty" options="{! v.options }" onchange="{! c.handleChange }"/>
         </lightning:layoutItem>
         <lightning:layoutItem padding="around-small">
-            <lightning:button variant="brand" label="Start New Game" title="Start New Game"  />
+            <lightning:button variant="brand" label="Start New Game" title="Start New Game" onclick="c.StartGame"  />
         </lightning:layoutItem>
         <lightning:layoutItem padding="around-small">
             <lightning:button label="Neutral" title="Reshuffle" />
