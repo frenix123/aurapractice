@@ -4,17 +4,19 @@
     {'label': 'Medium', 'value': 'medium'},
     {'label': 'Hard', 'value': 'hard'},
     ]" access="Public"/>   
+    <aura:attribute name="selectedValue" type="String"/>
     <lightning:card title="Hello">
     <lightning:layout horizontalAlign="center">
         <lightning:layoutItem padding="around-small">
-            <lightning:combobox name="progress" label="Status" variant="label-hidden" value="inProgress" placeholder="Select Difficulty" options="{! v.options }" onchange="{! c.handleChange }"/>
+            <lightning:combobox name="progress" aura:id="DifficultyLevel" label="Status" variant="label-hidden" value="not yet" placeholder="Select Difficulty" options="{!v.options }" />
         </lightning:layoutItem>
         <lightning:layoutItem padding="around-small">
-            <lightning:button variant="brand" label="Start New Game" title="Start New Game" onclick="c.StartGame"  />
+            <lightning:button variant="brand" label="Start New Game" title="Start New Game" onclick="{!c.StartGame}"  />
         </lightning:layoutItem>
         <lightning:layoutItem padding="around-small">
-            <lightning:button label="Neutral" title="Reshuffle" />
+            <lightning:button label="Neutral" title="Reshuffle" onclick="{!c.Reshuffle}"/>
         </lightning:layoutItem>
+        The Selected Value Is {!v.selectedValue}
     </lightning:layout>
     
 </lightning:card>	
