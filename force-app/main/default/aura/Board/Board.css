@@ -1,2 +1,9 @@
-.THIS {
+.THIS.choices{
+    background-color: aliceblue;
+    position: relative;
+}
+
+.THIS .winwordtext{
+    text-transform: uppercase;
+    font-weight: bold;
 }

@@ -1,32 +1,45 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="words" type="List"  />
+    <aura:attribute name="winWord" type="String" /> 
+    <aura:attribute name="clickCount" type="Integer" default="0"/>
     <aura:handler name="init" value="{!this}" action="{!c.doThis}" />
-    <lightning:layout multipleRows="true" horizontalAlign="center">
-        <lightning:layoutItem size="4" padding="around-small">
-            1
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            2
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            3
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            4
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            5
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            6
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            7
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            8
-        </lightning:layoutItem>
-        <lightning:layoutItem size="4" padding="around-small">
-            1
-        </lightning:layoutItem>
-    </lightning:layout>
+    <div class="choices">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading--large"><div class="winwordtext">{!v.winWord}</div></div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading--large">Tries Left : {! (3-v.clickCount)}</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout multipleRows="true" horizontalAlign="center">
+            <lightning:layoutItem size="4" padding="around-small">
+                1
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                2
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                3
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                4
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                5
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                6
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                7
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                8
+            </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small">
+                1 
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
 </aura:component>
