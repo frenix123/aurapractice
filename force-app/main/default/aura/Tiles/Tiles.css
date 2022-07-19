@@ -1,0 +1,16 @@
+.THIS.Tiles {
+    background: white;
+    height: 80px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: BOLD;
+    font-size: large;
+    transition: all .5s ;
+}
+
+.THIS.Tiles:hover {
+    background-color: goldenrod;
+} 

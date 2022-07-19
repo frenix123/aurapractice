@@ -2,6 +2,8 @@
     <aura:attribute name="words" type="List"  />
     <aura:attribute name="winWord" type="String" /> 
     <aura:attribute name="clickCount" type="Integer" default="0"/>
+    <aura:attribute name="mode" type="String" />
+    <aura:attribute name="blocksize" type="Integer" />
     <aura:handler name="init" value="{!this}" action="{!c.doThis}" />
     <div class="choices">
         <lightning:layout>
@@ -13,33 +15,12 @@
             </lightning:layoutItem>
         </lightning:layout>
         <lightning:layout multipleRows="true" horizontalAlign="center">
-            <lightning:layoutItem size="4" padding="around-small">
-                1
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                2
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                3
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                4
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                5
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                6
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                7
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                8
-            </lightning:layoutItem>
-            <lightning:layoutItem size="4" padding="around-small">
-                1 
-            </lightning:layoutItem>
+
+            <aura:iteration items="{!v.words}" var="panels" >
+                <lightning:layoutItem size="{!v.blocksize}" padding="around-small">
+                    <c:Tiles Text="{!panels}"></c:Tiles>
+                </lightning:layoutItem>
+            </aura:iteration>
         </lightning:layout>
     </div>
 </aura:component>

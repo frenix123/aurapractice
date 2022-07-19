@@ -1,12 +1,12 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
     <aura:attribute name="options" type="List" default="[
-    {'label': 'Easy', 'value': 'easy'},
-    {'label': 'Medium', 'value': 'medium'},
-    {'label': 'Hard', 'value': 'hard'},
+    {'label': 'Easy', 'value': 'Easy'},
+    {'label': 'Medium', 'value': 'Medium'},
+    {'label': 'Hard', 'value': 'Hard'},
     ]" access="Public"/>   
     <aura:attribute name="selectedValue" type="String"/>
     <lightning:card title="Hello">
-    <lightning:layout horizontalAlign="center">
+    <lightning:layout horizontalAlign="center" multipleRows="True">
         <lightning:layoutItem padding="around-small">
             <lightning:combobox name="progress" aura:id="DifficultyLevel" label="Status" variant="label-hidden" value="not yet" placeholder="Select Difficulty" options="{!v.options }" />
         </lightning:layoutItem>
@@ -17,7 +17,14 @@
             <lightning:button label="Neutral" title="Reshuffle" onclick="{!c.Reshuffle}"/>
         </lightning:layoutItem>
         The Selected Value Is {!v.selectedValue}
+        <lightning:layoutItem size="12" padding="around-small">
+            <aura:if isTrue="{! (v.selectedValue != NULL)}">
+                <c:Board mode="{!v.selectedValue}"></c:Board>
+                <aura:set attribute="else">
+                    False
+                </aura:set>
+            </aura:if>        
+        </lightning:layoutItem>
     </lightning:layout>
-    
 </lightning:card>	
 </aura:component>
