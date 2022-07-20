@@ -5,7 +5,7 @@
     <aura:attribute name="mode" type="String" />
     <aura:attribute name="blocksize" type="Integer" />
     <aura:handler name="init" value="{!this}" action="{!c.doThis}" />
-    <aura:handler name="Click" event="c:Winclick" action="{!c.ClickEvent}" />
+    <aura:handler name="Click" event="c:WinClick" action="{!c.ClickEvent}" />
     <div class="choices">
         <lightning:layout>
             <lightning:layoutItem padding="around-small">
