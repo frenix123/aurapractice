@@ -21,5 +21,16 @@
         component.set("v.blocksize",blocksize);
         
 
+    },
+
+    ClickEvent : function(component, event, helper) {
+        let clicks = component.get("v.clickCount") + 1;
+        const value = event.getParam("Clicktext");
+        if(value === component.get("v.winWord")){
+            console.log("You Win.");
+        }else if(clicks===3){
+            console.log("You Lose");
+        }
+        component.set("v.clickCount",clicks);
     }
 })
